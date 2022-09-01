@@ -1,0 +1,33 @@
+openapi: 3.0.3
+info:
+  title: Macro - OpenAPI 3.0
+  description: |-
+    This is an OpenAPI 3.0 specification related to macros application.
+  contact:
+    email: hi@lazar.sh
+  version: 1.0.0
+externalDocs:
+  description: Find out more about the developer
+  url: https://lazar.sh
+servers:
+  - url: https://dev.macro-api.dusk.sh
+  - url: https://macro-api.dusk.sh
+tags:
+  - name: health
+    description: Everything related to API health.
+
+paths:
+  /health:
+    get:
+      tags:
+        - health
+      description: API Health check.
+      operationId: healthCheck
+      responses:
+        '200':
+          description: OK
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: OK
